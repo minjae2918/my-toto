@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Toto</title>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Poppins', sans-serif;
+			background-color: #f4f4f9;
+			color: #333;
+			scroll-behavior: smooth;
+		}
+
+		/* 상단 메뉴 */
+		header {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			background-color: #181B1F; /* 상단 메뉴 배경색 */
+			padding: 15px 20px;
+			z-index: 1000;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+		}
+
+		/* 로고 */
+		header .logo {
+			font-size: 32px; /* 글자 크기 조정 */
+			font-weight: 600;
+			letter-spacing: 2px; /* 글자 간격 조정 */
+			color: #ffffff; /* 흰색 글자 */
+			text-decoration: none;
+		}
+
+		/* 메뉴 스타일 */
+		nav {
+			display: flex;
+			gap: 20px;
+		}
+
+		nav a {
+			text-decoration: none;
+			color: #6A6A6A;
+			font-size: 18px;
+			transition: color 0.3s;
+		}
+
+		nav a:hover {
+			color: white; /* Hover 시 흰색으로 변경 */
+		}
+
+		/* Home 섹션 스타일 */
+		#home {
+			position: relative;
+			padding: 100px 20px;
+			height: 100vh;
+			background-image: url('/images/olena-bohovyk-6FdG9OL6JLI-unsplash.jpg');
+			background-size: cover;
+			background-position: center;
+		}
+
+		/* 별 추가 */
+		.star {
+			position: absolute;
+			width: 5px;
+			height: 5px;
+			background-color: white;
+			border-radius: 50%;
+			animation: twinkle 2s infinite ease-in-out;
+		}
+
+		/* 반짝이는 애니메이션 */
+		@keyframes twinkle {
+			0% {
+				opacity: 0.5;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+
+		/* 시간차 애니메이션 */
+		.star:nth-child(odd) {
+			animation-delay: 0.5s;
+		}
+
+		.star:nth-child(even) {
+			animation-delay: 1s;
+		}
+
+		/* 섹션 스타일 */
+		section {
+			padding: 100px 20px;
+			height: 100vh;
+			text-align: center;
+		}
+
+		section:nth-child(odd) {
+			background-color: #f0f0f0;
+		}
+
+		section:nth-child(even) {
+			background-color: #e0e0e0;
+		}
+
+		.content-box {
+			background-color: white;
+			padding: 30px;
+			max-width: 800px;
+			margin: 0 auto;
+			border-radius: 10px;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		}
+
+		/* story 섹션 */
+		#story {
+			background-color: #fafafa;
+			padding: 50px 20px;
+			text-align: center;
+		}
+
+		#story .content-box {
+			background-color: #fff;
+			padding: 40px;
+			max-width: 900px;
+			margin: 0 auto;
+			border-radius: 10px;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+			line-height: 1.6;
+		}
+
+		#story h1 {
+			font-size: 36px;
+			font-weight: 600;
+			color: #181B1F;
+			margin-bottom: 30px;
+		}
+
+		#story .section-text {
+			font-size: 18px;
+			color: #555;
+			margin-bottom: 20px;
+		}
+
+		.divider {
+			width: 60px;
+			height: 2px;
+			background-color: #181B1F;
+			margin: 30px auto;
+		}
+
+		footer {
+			text-align: center;
+			padding: 20px;
+			background-color: #181B1F;
+			color: white;
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+		}
+
+		/* 반응형 */
+		@media (max-width: 768px) {
+			header {
+				flex-direction: column;
+				align-items: flex-start;
+			}
+
+			nav {
+				flex-direction: column;
+				gap: 10px;
+			}
+
+			nav a {
+				font-size: 16px;
+			}
+
+			section {
+				padding: 60px 20px;
+			}
+
+			footer {
+				padding: 15px;
+			}
+
+			.content-box {
+				padding: 20px;
+			}
+		}
+	</style>
+</head>
+<body>
+<!-- 상단 메뉴 -->
+<header>
+	<a href="#home" class="logo">My <span>Toto</span></a>
+	<nav>
+		<a href="#home">Home</a>
+		<a href="#about">About</a>
+		<a href="#story">Story</a>
+		<a href="#photo">Photo</a>
+	</nav>
+</header>
+
+<!-- Home 섹션 -->
+<section id="home">
+	<!-- 별 -->
+	<div class="stars-container">
+	</div>
+</section>
+
+<!-- About 섹션 -->
+<section id="about">
+	<div class="content-box">
+		<h1>About</h1>
+		<p>토토는요.</p>
+	</div>
+</section>
+
+<!-- Story 섹션 -->
+<section id="story">
+	<div class="content-box">
+		<h1>Story</h1>
+		<p class="section-text"><strong>길고양이 토토와의 만남</strong><br>
+			길에서 만난 작은 생명, <strong>토토</strong>. 처음 만난 날부터 우리는 특별한 인연을 맺게 되었어요...
+		</p>
+	</div>
+</section>
+
+<!-- Photo 섹션 -->
+<section id="photo">
+	<div class="content-box">
+		<h1>Photo</h1>
+		<p>이미지..</p>
+	</div>
+</section>
+
+<!-- 푸터 -->
+<footer>
+	<p>모든 저작권은 토토한테 있음</p>
+</footer>
+
+<script>
+	// 별 동적 생성
+	const starContainer = document.querySelector('.stars-container');
+
+	// 별 100개 생성
+	for (let i = 0; i < 100; i++) {
+		const star = document.createElement('div');
+		star.classList.add('star');
+		// 랜덤 위치 설정
+		const x = Math.random() * 100;
+		const y = Math.random() * 100;
+		star.style.top = `${y}vh`;
+		star.style.left = `${x}vw`;
+		star.style.animationDelay = `${Math.random() * 2}s`; // 시간차
+		starContainer.appendChild(star);
+	}
+	// 메뉴 스크롤 이동
+	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+		anchor.addEventListener('click', function (e) {
+			e.preventDefault();
+			const targetId = this.getAttribute('href').substring(1);
+			const targetElement = document.getElementById(targetId);
+			window.scrollTo({
+				top: targetElement.offsetTop - 60, // 메뉴 높이만큼 빼기
+				behavior: 'smooth',
+			});
+		});
+	});
+</script>
+
+</body>
+</html>
