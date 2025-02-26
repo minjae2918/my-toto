@@ -1,2 +1,2 @@
-url: "https://minjae2918.github.io/my-toto/"   # GitHub Pages URL
-baseurl: "/webapp"                    # 기본 경로 설정
+url: "https://minjae2918.github.io"   # GitHub Pages URL
+baseurl: "/my-toto/webapp"            # 기본 경로 설정
