@@ -137,6 +137,10 @@
 			background-color: #fafafa;
 			padding: 50px 20px;
 			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
 		}
 
 		#story .content-box {
@@ -297,6 +301,8 @@
 			gap: 5px;
 			margin-top: 20px;
 			position: relative;
+			justify-items: center;
+			align-items: center;
 		}
 
 		.tile {
@@ -341,8 +347,9 @@
 		}
 
 		#status {
+			height: 80px !important;
 			margin-top: 20px;
-			font-size: 1.2rem;
+			font-size: 18px;
 			color: #333;
 		}
 
@@ -604,10 +611,10 @@
 
 	// 이벤트 좌표
 	const events = [
-		{x: 1, y: 0, message: "우리는 집 근처 편의점에서 처음 만났어요.", className: "special-cu"},
-		{x: 3, y: 1, message: "추운 겨울날씨에 주차장에 머무르곤 했는데, 어느날 하루아침에 사라져버렸어요.", className: "special-park"},
-		{x: 3, y: 3, message: "수소문 끝에 경기도 안산에서 토토를 봤다는 연락을 받았어요.", className: "special-ansan"},
-		{x: 4, y: 4, message: "좋은 분들의 구조 도움 덕분에 토토는 저희집으로 와서 저의 사랑스러운 고양이 토토가 되었어요.", className: "special-house"}
+		{x: 1, y: 0, message: "우리는 집 근처 편의점에서 처음 만났어요.<br>그때부터 매일같이 따뜻한 밥을 챙겨주었죠.", className: "special-cu"},
+		{x: 3, y: 1, message: "추운 겨울 토토는 주차장에 머무르곤 했는데,<br>어느 날 하루 아침에 토토는 사라져버렸어요.", className: "special-park"},
+		{x: 3, y: 3, message: "수소문 끝에 경기도 안산에서 토토를 봤다는 연락을 받았어요.<br>토토는 자동차 엔진룸에 들어가 고속도로를 탄 것 같았어요.", className: "special-ansan"},
+		{x: 4, y: 4, message: "좋은 분들의 도움 덕분에 토토는 무사히 저희 집으로 왔고,<br>저의 소중하고 사랑스러운 고양이 토토가 되었답니다.", className: "special-house"}
 	];
 
 	// 맵 생성
@@ -645,9 +652,9 @@
 	function checkEvent(x, y) {
 		const event = events.find(e => e.x === x && e.y === y);
 		if (event) {
-			statusElement.textContent = `${event.message}`;
+			statusElement.innerHTML = `${event.message}`;
 		} else {
-			statusElement.textContent = "토토를 방향키로 이동시켜 보세요.";
+			statusElement.innerHTML = "토토를 방향키로 이동시켜 보세요.";
 		}
 	}
 
@@ -685,6 +692,7 @@
 		} else if (event.key === "ArrowDown") {
 			movePlayer("down");
 		}
+		event.preventDefault();
 	});
 
 	createMap();
