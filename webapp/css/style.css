@@ -1,0 +1,455 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #181B1F;
+    padding: 15px 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 로고 */
+header .logo {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* 메뉴 */
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #6A6A6A;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* Home 섹션 */
+#home {
+    position: relative;
+    padding: 100px 20px;
+    height: 100vh;
+    background-image: url('https://minjae2918.github.io/my-toto/webapp/images/olena-bohovyk-6FdG9OL6JLI-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* 별 */
+.star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite ease-in-out;
+}
+
+/* 별 애니메이션 */
+@keyframes twinkle {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* 시간차 애니메이션 */
+.star:nth-child(odd) {
+    animation-delay: 0.5s;
+}
+
+.star:nth-child(even) {
+    animation-delay: 1s;
+}
+
+/* 섹션 공통 */
+section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+/* Photo 섹션 */
+#photo {
+    padding: 50px 20px;
+    background-color: #fff;
+    height: auto; /* 잘리는 현상 수정 */
+}
+
+#home {
+    padding: 100px 20px;
+    height: 100vh;
+    background-image: url('https://minjae2918.github.io/my-toto/webapp/images/olena-bohovyk-6FdG9OL6JLI-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.content-box {
+    background-color: white;
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* story 섹션 */
+#story {
+    background-color: #fafafa;
+    padding: 50px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#story .content-box {
+    background-color: #fff;
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+}
+
+#story h1 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #181B1F;
+    margin-bottom: 30px;
+}
+
+#story .section-text {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #181B1F;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    .content-box {
+        padding: 20px;
+    }
+}
+
+/* 챗봇 */
+.chat-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    overflow-y: auto;
+    max-height: 500px; /* 최대 높이 설정 */
+}
+
+.chat-box {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-box p {
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* 챗봇 왼쪽 */
+.bot-message {
+    background-color: #1f2937;
+    color: white;
+    align-self: flex-start;
+}
+
+/* 챗봇 오른쪽 */
+.user-message {
+    background-color: #56c7f3;
+    color: white;
+    align-self: flex-end;
+}
+
+/* 버튼 스타일 */
+.question-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.question-btn {
+    background-color: #181b1f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.question-btn:hover {
+    background-color: #333;
+}
+
+.home-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f2f5;
+}
+
+.home-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 8px;
+}
+
+/* 맵 */
+#map {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: repeat(5, 100px);
+    gap: 5px;
+    margin-top: 20px;
+    position: relative;
+    justify-items: center;
+    align-items: center;
+}
+
+.tile {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.tile.active {
+    background-color: #ffa;
+}
+
+.tile.special-cu {
+    background-image: url('https://minjae2918.github.io/my-toto/webapp/images/story/cu.png');
+    background-size: cover;
+}
+
+.tile.special-park {
+    background-image: url('https://minjae2918.github.io/my-toto/webapp/images/story/park.png');
+    background-size: cover;
+}
+
+.tile.special-ansan {
+    background-image: url('https://minjae2918.github.io/my-toto/webapp/images/story/ansan.png');
+    background-size: cover;
+}
+
+.tile.special-house {
+    background-image: url('https://minjae2918.github.io/my-toto/webapp/images/story/house.png');
+    background-size: cover;
+}
+
+#map img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.2s ease;
+}
+
+#status {
+    height: 80px !important;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Photo 섹션 */
+#photo {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+#photo .content-box {
+    background-color: white;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 갤러리 ul */
+.gallery-images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gallery-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-image:hover {
+    transform: scale(1.1);
+}
+
+/* 팝업 모달 */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; /* 페이드 */
+}
+
+.popup-overlay.show {
+    display: flex;
+    opacity: 1;
+}
+
+.popup-content {
+    position: relative;
+    background-color: #fff;
+    width: 60%;
+    max-width: 900px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.popup-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.close-popup-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-popup-btn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
