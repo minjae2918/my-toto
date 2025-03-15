@@ -34,7 +34,7 @@ function createMap() {
 			// 토토 아이콘
 			if (playerPosition.x === col && playerPosition.y === row) {
 				const playerIcon = document.createElement("img");
-				playerIcon.src = "https://minjae2918.github.io/my-toto/webapp/images/story/toto.png"; // 토토 아이콘
+				playerIcon.src = "./images/story/toto.png"; // 토토 아이콘
 				tile.appendChild(playerIcon);
 			}
 
